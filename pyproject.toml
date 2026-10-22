@@ -1,0 +1,26 @@
+[project]
+name = "almanac"
+version = "0.1.0"
+description = "Self-hosted IT documentation for MSPs and internal IT: orgs, configurations, an encrypted vault and an audit log"
+requires-python = ">=3.9"
+# stdlib except this one: no authenticated encryption in the stdlib, and a vault
+# is the one place rolling your own is not an option. KDF is stdlib scrypt.
+dependencies = ["cryptography>=42"]
+
+[project.scripts]
+almanac-import = "almanac.importer:main"
+almanac-server = "almanac.server:main"
+almanac-export = "almanac.export:main"
+almanac-sync-lineage = "almanac.lineage:main"
+almanac-sweep-certs = "almanac.certs:main"
+almanac-demo = "almanac.demo:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["almanac*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
