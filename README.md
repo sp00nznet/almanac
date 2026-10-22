@@ -115,7 +115,7 @@ customers exist. The reuse report is filtered per viewer for the same reason.
 
 Fields that people type in go stale. In the real migration, 346 of 873 configurations had
 no OS recorded and none had a warranty date. `almanac-sync-lineage` reads the state tree of
-[lineage](https://github.com/sp00nznet/lineage), a separate inventory agent (not public yet),
+[lineage](https://github.com/sp00nznet/lineage), a separate inventory agent,
 so the facts a machine can report about itself come from the machine. It matches hosts by
 agent id, then by hostname, and it never guesses which customer an unknown host belongs to.
 
